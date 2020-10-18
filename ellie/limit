@@ -1,0 +1,38 @@
+thelimitizersizer = True
+while thelimitizersizer == True:
+  try:
+    price = float(auth_client.get_product_ticker(product_id=currency)['price'])
+    buy = round(price - (price * 0.01),2)
+
+    xx = float(auth_client.get_account(account(fiat[:3]))['available'])
+    xxx = xx / 3
+    xxxx = float(xxx/price)
+    XX = round((xxxx), 2)
+    WW = float(buy)
+    YY = WW
+    owned = float(auth_client.get_account(account(coin[:3]))['available'])
+    sellDat= round((owned/2),6)
+    sell = round(price + (price * 0.01),2)
+    ZZ = float(sell)
+    ZZZ = ZZ
+
+
+    limitBuy = auth_client.buy(price=YY, 
+               size=XX,
+               order_type='limit',
+               product_id=currency)
+
+
+    limitSell = auth_client.sell(price=ZZ,
+                size=sellDat, 
+                order_type='limit',
+                product_id=currency)
+
+          
+   
+    limitBuy
+    limitSell
+    time.sleep(30)
+
+  except:
+      continue
